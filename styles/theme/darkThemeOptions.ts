@@ -1,11 +1,31 @@
 import { ThemeOptions } from '@mui/material/styles'
+import colorTheme from './color'
+
+const  {
+	colorWhite,
+	colorBlack,
+	colorGrey,
+	colorPink,
+	colorPurple
+} = colorTheme
+
+declare module '@mui/material/styles' {
+  interface PaletteColor {
+    colorPink?: string;
+		colorPurple?: string
+  }
+  interface SimplePaletteColorOptions {
+    colorPink?: string;
+		colorPurple?: string
+  }
+}
 
 const darkThemeOptions: ThemeOptions = {
   components: {
     MuiButton: {
       styleOverrides: {
         root: {
-          color: '#FFFFFF;'
+          color: colorWhite
         }
       },
       variants: [
@@ -15,7 +35,7 @@ const darkThemeOptions: ThemeOptions = {
             position: 'relative',
             border: 0,
             borderRadius: 6,
-            background: '#161616',
+            background: colorBlack,
             backgroundClip: 'padding-box',
             '&:after': {
               position: 'absolute',
@@ -23,7 +43,7 @@ const darkThemeOptions: ThemeOptions = {
               left: -2,
               right: -2,
               bottom: -2,
-              background: `linear-gradient(91.47deg, #C10171 3.73%, #5C00F2 100%)`,
+              background: `linear-gradient(91.47deg, ${colorPink} 3.73%, ${colorPurple} 100%)`,
               content: '""',
               zIndex: -1,
               borderRadius: 6
@@ -32,14 +52,14 @@ const darkThemeOptions: ThemeOptions = {
               position: 'relative',
               border: 0,
               borderRadius: 6,
-              background: '#161616',
+              background: colorBlack,
               backgroundClip: 'padding-box'
             },
             '&:action': {
               position: 'relative',
               border: 0,
               borderRadius: 6,
-              background: '#161616',
+              background: colorBlack,
               backgroundClip: 'padding-box'
             }
           }
@@ -47,18 +67,18 @@ const darkThemeOptions: ThemeOptions = {
         {
           props: { variant: 'contained', color: 'primary' },
           style: {
-            backgroundImage: `linear-gradient(91.47deg, #C10171 3.73%, #5C00F2 100%)`
+            backgroundImage: `linear-gradient(91.47deg, ${colorPink} 3.73%, ${colorPurple} 100%)`
           }
         },
         {
           props: { variant: 'contained', color: 'secondary' },
           style: {
-            backgroundColor: '#161616',
+            backgroundColor: colorBlack,
             '&:hover': {
-              backgroundColor: '#161616'
+              backgroundColor: colorBlack
             },
             '&:action': {
-              backgroundColor: '#161616'
+              backgroundColor: colorBlack
             }
           }
         }
@@ -67,8 +87,12 @@ const darkThemeOptions: ThemeOptions = {
   },
   palette: {
     mode: 'dark',
-    primary: {
-      main: '#FFFFFF'
+		primary: {
+      main: colorWhite,
+      light: colorGrey,
+      dark: colorBlack,
+			colorPink,
+			colorPurple
     }
   }
 }
