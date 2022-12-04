@@ -8,8 +8,8 @@ const IndexPage: NextPage = () => {
 			<SectionTitle title="類型"/>
 			<ColorChangeButton buttonTitle="2022" styleSize="sm" isActive={true}/>
 			<ColorChangeButton buttonTitle="2021" styleSize="sm" isActive={false}/>
-			<ColorChangeBorderButton buttonTitle="2022" isActive={true}/>
-			<ColorChangeBorderButton buttonTitle="2021" isActive={false}/>
+			<ColorChangeBorderButton buttonTitle="加入片單" isActive={true}/>
+			<ColorChangeBorderButton buttonTitle="更多資訊" isActive={false}/>
 			<div className="w-40 h-12">
 				<ColorButton buttonTitle="2022"/>
 			</div>
